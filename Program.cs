@@ -12,6 +12,8 @@ namespace ClassExample
         {
             public static int counter = 0;
 
+            public int variable = 273;
+
             public void CountParent()
             {
                 Parent.counter++;
@@ -56,6 +58,11 @@ namespace ClassExample
 
             Console.WriteLine(Parent.counter);
             Console.WriteLine(Child.counter);
+               
+            // 하이딩
+            Child child3 = new Child();
+            Console.WriteLine(child3.variable); // 문자열 variable 출력
+            Console.WriteLine(((Parent)child3).variable); // 숫자 variable 출력
         }
     }
 }
